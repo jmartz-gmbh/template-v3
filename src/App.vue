@@ -1,26 +1,66 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="vp-app">
+    <header>
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-12 mt-2"><Header></Header></div>
+        </div>
+      </div>
+    </header>
+    <div class="container mt-2">
+      <div class="row">
+        <div id="breadcrumb" class="col-12">
+          <Breadcrumb></Breadcrumb>
+        </div>
+        <div id="messages" class="col-12 mt-2"><Messages></Messages></div>
+      </div>
+    </div>
+    <main>
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-12 pt-2 pb-2"><router-view></router-view></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-12"><Footer></Footer></div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import Messages from "@/components/Messages.vue";
+import Breadcrumb from "@/components/Breadcrumb.vue";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    Footer,
+    Messages,
+    Breadcrumb,
+  },
+  mounted() {
+    this.$store.commit("breadcrumb-add", {
+      title: "Home",
+      to: "/",
+    });
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less">
+header > .container,
+main > .container,
+footer > .container {
+  background-color: #ccc;
 }
 </style>
