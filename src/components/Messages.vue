@@ -4,16 +4,19 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import {  } from "vue";
 
 export default {
   name: "Messages",
-  setup() {
-    let items = ref([]);
-
-    return {
-      items,
-    };
-  },
+ data() {
+   return {
+     
+   }
+ },
+ computed: {
+   items : function(){
+     return this.$store.state.messages.items;
+   }
+ }
 };
 </script>

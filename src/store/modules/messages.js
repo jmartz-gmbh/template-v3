@@ -3,10 +3,10 @@ export default {
         items: []
     },
     mutations: {
-        "breadcrumb-add": function (state,data) {
+        "message-add": function (state,data) {
             state.items.push(data);
         },
-        "breadcrumb-reset": function (state) {
+        "messages-reset": function (state) {
             state.items = [];
         }
     }

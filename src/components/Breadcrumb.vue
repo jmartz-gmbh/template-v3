@@ -1,5 +1,5 @@
 <template>
-  <div class="vc-breadcrumb">
+  <div class="vc-breadcrumb px-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li v-for="(item, index) in items" :key="index" class="breadcrumb-item">
