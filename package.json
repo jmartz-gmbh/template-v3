@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:css": "tailwind -o public/tailwind.css -i src/tailwind.css",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "core-js": "^3.6.5",
     "less": "^4.1.1",
     "less-loader": "^7.0",
+    "tailwindcss": "^2.2.16",
     "vue": "^3.2.11",
     "vue-fontawesome": "^0.0.2",
     "vue-matomo": "^4.1.0",

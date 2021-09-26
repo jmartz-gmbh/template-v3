@@ -30,6 +30,7 @@ class RoboFile extends Tasks
 
 
     public function yarnBuild(){
+        $this->_exec('yarn run build:css');
         $this->_exec('yarn run build');
         $this->_exec('workbox generateSW workbox-config.js');
     }
@@ -41,7 +42,7 @@ class RoboFile extends Tasks
         $user = $config['server']['user'];
         $host = $config['server']['host'];
         $domain = $config['server']['domain'];
-        $tmp = date('d-m-Y-H-i');
+        $tmp = $config['timestamp'];
 
         $this->taskRsync()
             ->fromPath('./dist')
@@ -65,7 +66,7 @@ class RoboFile extends Tasks
         $user = $config['server']['user'];
         $host = $config['server']['host'];
         $domain = $config['server']['domain'];
-        $tmp = date('d-m-Y-H-i');
+        $tmp = $config['timestamp'];
 
         // link new version
         $this->taskSshExec($host, $user)
