@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-12">
+    <div class="grid grid-cols-1">
+      <div class="col-span-1">
         <h3>Angaben gemäß § 5 TMG</h3>
         <p>
           Jonathan Martz <br />
