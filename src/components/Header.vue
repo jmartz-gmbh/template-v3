@@ -2,7 +2,7 @@
   <div class="vc-header">
     <div class="grid grid-cols-3">
       <div class="col-span-2">
-        Home
+        <router-link to="/">Home</router-link>
       </div>
       <div class="col-span-1">
         <font-awesome-icon
